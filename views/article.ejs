@@ -1,0 +1,59 @@
+<%- include('./partials/head') %>
+
+<main>
+    <article>
+        <h1><%-article.title.rendered%></h1>
+        <picture>
+            <img src="<%-article.jetpack_featured_media_url%>" 
+            alt="artikel afbeelding"
+            width="<%=article.yoast_head_json.og_image[0].width%>"
+            height="<%=article.yoast_head_json.og_image[0].height%>">
+        </picture>
+
+        <div class="article-date-header">
+            <div>
+                <a href=""><%=article.yoast_head_json.schema["@graph"][0].articleSection[0]%></a>
+                
+                <time>
+                    <%= new Date(article.date).getDate() %>/<%= new Date(article.date).getMonth() %>/<%= new
+                    Date(article.date).getFullYear() %>
+                </time>
+          </div>
+
+            <form action="/article/<%=article.slug%>" method="post">
+                <input type="hidden" name="slug" value="<%-article.slug%>">
+                <label for="copy-link"><%= article.copy %></label>
+                <button type="submit" id="share">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg fill="#FFFF" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                         viewBox="0 0 51.997 51.997" xml:space="preserve">
+                    <path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
+                        c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
+                        c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
+                        C52.216,18.553,51.97,16.611,51.911,16.242z"/>
+                    </svg>
+                    <%-share%>
+                </button>
+            </form>
+        </div>
+
+        <section class="article-detail_author">
+            <strong><%-article.excerpt.rendered%></strong>
+
+            <section>
+            <h2><span class="article-detail_author_type">Auteur:</span> <%=article.yoast_head_json.author%></h2>
+            <!-- <img src="https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY="> -->
+            </section>
+            <section>
+                <h2><span class="article-detail_author_type">Leestijd:</span> < 3 min</h2>
+            </section>
+        </section>
+        <section class="article-detail_content">
+            <%-article.content.rendered%>
+        </section>
+    </article>
+</main>
+
+
+<%- include('./partials/foot') %>

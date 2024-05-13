@@ -1,0 +1,70 @@
+<%- include('./partials/head') %>
+<main>
+  <ul class="hoofdpagina">
+    <%articles.forEach(article => {
+      {%>
+      <li>
+        <a href="/artikel/<%=article.slug%>">
+
+          <picture>
+            <img src="<%=article.jetpack_featured_media_url%>"
+            alt="artikel afbeelding"
+            width="<%=article.yoast_head_json.og_image[0].width%>" 
+            height="<%=article.yoast_head_json.og_image[0].height%>">
+          </picture>
+          <h1><%-article.title.rendered%></h1>
+        </a>
+        
+        <div>
+          <time>
+            <%= String(new Date(article.date).getDate()).padStart(2, '0') %>/<%= String(new Date(article.date).getMonth() + 1).padStart(2, '0') %>/<%= new Date(article.date).getFullYear() %>
+          </time>
+
+          <span><%=article.shares%> keer gedeeld</span>   
+        </div>
+        <p><%- article.excerpt.rendered %></p>
+      </li>
+      <%}
+    })%>
+  </ul>
+
+  <ul class="categories-home">
+    <li>
+      <h1>Onze supporters</h1>
+    </li>
+    <li>
+      <h1>Binnenland</h1>
+    </li>
+    <li>
+      <h1>Buitenland</h1>
+    </li>
+    <li>
+      <h1>Colums</h1>
+    </li>
+    <li>
+      <h1>Economie</h1>
+    </li>
+    <li>
+      <h1>Kunst & Media</h1>
+    </li>
+    <li>
+      <h1>Podcast</h1>
+    </li>
+    <li>
+      <h1>Politiek</h1>
+    </li>
+    <li>
+      <h1>Wetenschap</h1>
+    </li>
+
+    
+  </ul>
+
+
+
+
+
+</main>
+<%- include('./partials/foot') %>
+
+    
