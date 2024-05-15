@@ -124,6 +124,7 @@ header {
     background-color: var(--primary-color-3);
     border-bottom: var(--border-style-black);
     width: 100%;
+
 }
 
 header div {
@@ -131,7 +132,6 @@ header div {
     margin: 0 auto; 
     display: flex;
     align-items: center;
-    padding: 1em;
     justify-content: space-between;
     width: 100%; 
 }
@@ -139,6 +139,23 @@ header div {
 header div a img {
     width: 15em;
 }
+
+.navbar-menu {
+    position: absolute;
+    right: -300px; /* Slide in from the right */
+    top: 80px;
+    width: 200px;
+    margin: -100px -50px 0 0; /* Center horizontally and vertically */
+    background: #ededed;
+    transition: right 0.5s; /* Change transition property to right */
+}
+
+#navbar-toggle input:checked ~ ul {
+    right: 40px; /* Slide in to the right */
+    width: 100%;
+    height: 100vw;
+}
+
 
 
 
