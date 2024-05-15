@@ -124,7 +124,7 @@ header {
     background-color: var(--primary-color-3);
     border-bottom: var(--border-style-black);
     width: 100%;
-
+    padding: 1em 0;
 }
 
 header div {
@@ -137,23 +137,28 @@ header div {
 }
 
 header div a img {
-    width: 15em;
+    width: 10em;
 }
 
 .navbar-menu {
-    position: absolute;
-    right: -300px; /* Slide in from the right */
-    top: 80px;
-    width: 200px;
-    margin: -100px -50px 0 0; /* Center horizontally and vertically */
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 100%;
+    height: 100vh;
     background: #ededed;
-    transition: right 0.5s; /* Change transition property to right */
+    transition: right 0.5s;
+    overflow-y: auto;
+    max-width: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#navbar-toggle input:checked ~ ul {
-    right: 40px; /* Slide in to the right */
-    width: 100%;
-    height: 100vw;
+#navbar-toggle input:checked ~ .navbar-menu {
+    right: 0; /* Slide menu in when toggle is checked */
 }
 
 
