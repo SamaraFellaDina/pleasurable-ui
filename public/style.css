@@ -120,35 +120,6 @@ main {
     margin: auto;
 }
 
-/* header {
-    width: 100%;
-    height: 50px;
-    background-color: var(--primary-color-3);
-    border-bottom: var(--border-style-black);
-    
-    display: flex;
-    padding: 1em 0;
-    z-index: 1;
-}
-
-header div {
-    padding: 0 1em;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-}
-
-header img {
-    width: 10em;
-    height: auto;
-} */
-
-/* header ul,
-header input {
-    display: none;
-} */
-
 header {
     background-color: var(--primary-color-3);
     border-bottom: var(--border-style-black);
@@ -157,12 +128,12 @@ header {
 
 header div {
     max-width: 768px;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto; 
     display: flex;
     align-items: center;
     padding: 1em;
     justify-content: space-between;
-    width: 100%; /* Take full width */
+    width: 100%; 
 }
 
 header div a img {
