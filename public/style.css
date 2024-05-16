@@ -157,21 +157,19 @@ header div a img {
 }
 
 .navbar-menu li{
-    font-size: 2em;
-    line-height: 1.5em;
+    font-size: 3em;
+    line-height: 2em;
 }
 
 
-
-
-#navbar-toggle span {
+#navbar-toggle .navbar-menu-button {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: var(--primary-color-1);
   border-radius: 3px;
   
   z-index: 1;
@@ -184,60 +182,42 @@ header div a img {
   opacity 0.55s ease;
 }
 
-#navbar-toggle span:first-child {
+#navbar-toggle .navbar-menu-button:first-child {
   transform-origin: 0% 0%;
 }
 
-#navbar-toggle span:nth-last-child(2) {
+#navbar-toggle .navbar-menu-button:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#navbar-toggle input:checked ~ span {
+#navbar-toggle input:checked ~ .navbar-menu-button {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
 }
 
-#navbar-toggle input:checked ~ span:nth-last-child(3)
-{
+#navbar-toggle input:checked ~ .navbar-menu-button:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
-#navbar-toggle input:checked ~ span:nth-last-child(2)
-{
+#navbar-toggle input:checked ~ .navbar-menu-button:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-
-
-
-
-#navbar-toggle input{
+#navbar-toggle input{ 
     display: block;
     width: 40px;
     height: 32px;
     position: absolute;
-    top: 2;
-    right: 2;
+    top: 10px;
+    right: 10px;
     opacity: 0;
     z-index: 2;
-    -webkit-touch-callout: none;
 }
 
 #navbar-toggle input:checked ~ .navbar-menu {
     right: 0;
     transform: none;
 }
-
-
-
 
 
