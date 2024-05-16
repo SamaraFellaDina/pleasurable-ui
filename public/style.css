@@ -156,7 +156,7 @@ header div a img {
     align-items: center;
 }
 
-.navbar-menu li{
+.navbar-menu ul li{
     font-size: 3em;
     line-height: 2em;
     text-transform: uppercase;
@@ -232,17 +232,34 @@ header div a img {
 
 @media (min-width: 768px) {
 
-    header div{
-        flex-direction: column;
+    header {
+        border-bottom: none;
     }
+
+    header div {
+        flex-direction: column;
+        max-width: 1200px;
+        gap: 1em;
+    }
+
+    header div nav{
+        width: 100%;
+    }
+
     .navbar-menu {
         background: none;
+        max-width: unset;
+        border-top: var(--border-style-black);
+        border-bottom:var(--border-style-black);
+        padding: .5em 1em;
+
     }
-    
+
     .navbar-menu li {
         font-size: 1em;
-        line-height: auto;
+        letter-spacing: 1px;
     }
+ 
 
     .navbar-menu {
         position:unset;
@@ -253,7 +270,6 @@ header div a img {
         background: none;
         transition: none;
         overflow-y: unset;
-        width: 768px;
     
         display: flex;
         flex-direction: row;
@@ -261,7 +277,8 @@ header div a img {
         align-items: center;
     }
 
-    #navbar-toggle .navbar-menu-button {
+    #navbar-toggle .navbar-menu-button,
+    #navbar-toggle input {
         display: none;
     }
 
