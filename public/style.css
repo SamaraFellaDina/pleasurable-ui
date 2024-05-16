@@ -156,10 +156,10 @@ header div a img {
     align-items: center;
 }
 
-.navbar-menu ul li{
+.navbar-menu li{
     font-size: 3em;
     line-height: 2em;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .navbar-menu a{
@@ -256,8 +256,9 @@ header div a img {
     }
 
     .navbar-menu li {
-        font-size: 1em;
+        font-size: .7em;
         letter-spacing: 1px;
+        text-transform: uppercase;
     }
  
 
@@ -289,3 +290,8 @@ header div a img {
     }
 }
 
+@media (min-width: 1024px) {
+    .navbar-menu li {
+        font-size: .8em;
+    }
+}
