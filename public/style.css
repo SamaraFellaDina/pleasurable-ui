@@ -113,9 +113,10 @@ summary {
 }
 
 main {
-  padding: 2em;
-  /* max-width: 768px; */
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* max-width: 768px; */
 }
 
 header {
@@ -149,6 +150,7 @@ section {
   overflow-x: hidden;
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
 .post {
@@ -169,6 +171,12 @@ section {
   width: 70%;
   height: 90vh;
   scroll-snap-align: center;
+  transform: scale(0.9);
+}
+
+.post-content img {
+  transform: scale(0.9);
+  max-height: 60vh;
 }
 
 @supports (scrollbar-width: none) {
