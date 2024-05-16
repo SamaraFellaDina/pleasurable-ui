@@ -1,7 +1,29 @@
 <%- include('./partials/head') %>
 <main>
-  <%- include('./partials/donation') %>
-  
+  <div>
+    <div class="donation">
+      <section>
+          <h1>Red Pers bestaat mede dankzij jou</h1>
+          <p>Red Pers biedt jonge, aspirerende journalisten
+          een podium én begeleiding. Dat kunnen we nog 
+          beter met jouw steun.</p>
+      </section>
+      
+      <ul>
+          <li><a href="https://bunq.me/redpersnl/5">€5</a></li>
+          <li><a href="https://bunq.me/redpersnl/10">€10</a></li>
+          <li><a href="https://bunq.me/redpersnl/25">€25</a></li>
+          <li><a href="https://bunq.me/redpersnl/50">€50</a></li>
+          <li><a href="https://bunq.me/redpersnl/">anders</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h1>Gesteund door:</h1>
+      <img src="../assets/image/dpg-media.svg">
+      <img src="../assets/image/vereniging-veronica.svg">
+   </div>
+  </div>
   <ul class="hoofdpagina">
     <%articles.forEach(article => {
       {%>
@@ -29,6 +51,8 @@
       <%}
     })%>
   </ul>
+
+
 
   <ul class="categories-home">
     <li>
