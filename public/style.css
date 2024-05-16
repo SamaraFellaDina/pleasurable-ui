@@ -147,7 +147,19 @@ header input {
     display: none;
 }
 
+.donation {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--active-color-1);
+    padding: 1em;
+}
 
+.donation ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border: var(--border-style-black);
+}
 
 
 
