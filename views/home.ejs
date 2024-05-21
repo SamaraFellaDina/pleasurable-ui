@@ -28,6 +28,33 @@
     })%>
   </ul>
 
+  <div>
+    <ul class="featured-carrousel">
+    <%articles.forEach(article => {
+      {%>
+      <li>
+        <a href="/artikel/<%=article.slug%>">
+        <picture>
+          <img src="<%=article.jetpack_featured_media_url%>"
+            alt="artikel afbeelding"
+            width="<%=article.yoast_head_json.og_image[0].width%>" 
+            height="<%=article.yoast_head_json.og_image[0].height%>">
+        </picture>
+
+        <div>
+          <time>
+            <%= String(new Date(article.date).getDate()).padStart(2, '0') %>/<%= String(new Date(article.date).getMonth() + 1).padStart(2, '0') %>/<%= new Date(article.date).getFullYear() %>
+          </time>
+          <h1><%-article.title.rendered%></h1>
+          <p><%-article.yoast_head_json.author%></p>
+        </div>
+      </a>
+      </li>
+      <%}
+    })%>
+  </ul>
+  </div>
+
   <ul class="categories-home">
     <li>
       <h1>Onze supporters</h1>

@@ -147,7 +147,76 @@ header input {
     display: none;
 }
 
+.featured-carrousel {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    
+    overflow: auto;
+    scrollbar-width: none;
+    position: relative;
+    scroll-snap-type: x mandatory;
+}
+
+.featured-carrousel li a,
+.featured-carrousel li a:hover {
+    color: var(--primary-color-1);
+}
+
+.featured-carrousel li a {
+    display: block;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    height: 15em;
+    background-color: var(--primary-color-3);
+    scroll-snap-align: center;
+} 
+
+.featured-carrousel li a,
+.featured-carrousel li a picture img {
+    border: var(--border-style-black);
+
+}
+
+.featured-carrousel li a picture,
+.featured-carrousel li a div { 
+    padding: 1em;
+}
+
+.featured-carrousel li a picture img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+}
+
+.featured-carrousel li a div {
+    width: 15em;
+    text-align:left
+}
+
+.featured-carrousel li a div h1 {
+    font-size: 1em;
+}
+
+.featured-carrousel li a div time,
+.featured-carrousel li a div h1,
+.featured-carrousel li a div p {
+    font-size: 1em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: .2em;
+}
+
+.featured-carrousel li a div time {
+    font-weight: 900;
+    color: var(--active-color-1);
+    letter-spacing: .1em;
+}
 
 
-
-
+/* .featured-carrousel li a:nth-child(3),
+.featured-carrousel li a:nth-child(4){
+    display: none;
+} */
