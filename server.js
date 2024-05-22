@@ -44,23 +44,35 @@ app.get('/artikel/:slug', function (request, response) {
 })
 
 app.post('/article/:slug', (request, response) => {
-  fetchJson(apiShares + "?filter[slug][_eq]=" + request.params.slug).then(({data}) => {
-      // console.log(data[0]?.shares) 
-      fetchJson(apiShares + (data[0]?.id ? '/' + data[0].id : '/0'), {
+  fetchJson(apiShares + "?filter[slug][_eq]=" + request.params.slug).then(({ data }) => {
+    const directData = data.length > 0 ? data[0] : null;
+    const method = directData ? 'PATCH' : 'POST';
+    const url = directData ? apiShares + '/' + directData.id : apiShares;
+    
+    const body = JSON.stringify({
+      slug: request.params.slug,
+      shares: directData ? directData.shares + 1 : 1,
+      likes: directData ? directData.likes : 0,
+    });
 
-    // Doe een PATCH op directus, stuur de id mee als die er is.
-      method: data[0]?.id ? 'PATCH' : 'POST',
+    fetchJson(url, {
+      method: method,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        slug: request.params.slug,
-        shares: data.length > 0 ? data[0].shares + 1 : 1,
-      }),
+      body: body,
     }).then((result) => {
-      // console.log(result)
-    })
-  })
-  response.redirect(301, '/artikel/' + request.params.slug)
-})
+      // Handle the result if needed
+    }).catch((error) => {
+      console.error('Error:', error);
+      response.status(500).send('An error occurred');
+    });
+  }).catch((error) => {
+    console.error('Error:', error);
+    response.status(500).send('An error occurred');
+  });
+
+  response.redirect(301, '/artikel/' + request.params.slug);
+});
+
 
 
 // Een port aanroepen om alles op te hosten
