@@ -1,65 +1,65 @@
 @font-face {
-    font-family: "Merriweather";
-    src: url("../assets/fonts/Merriweather/Merriweather-Regular.ttf");
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather/Merriweather-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("../assets/fonts/Inter/Inter-Regular.ttf");
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/Inter-Regular.ttf");
 }
 
 :root {
-    --primary-color-1:#2e2e2e;
-    --primary-color-2:#747474;
-    --primary-color-4:#F7F7F5;
-    --primary-color-3:#D9D9D9;
-    --active-color-1:#E85340;
-    --active-color-1_hover:#53211a;
+  --primary-color-1: #2e2e2e;
+  --primary-color-2: #747474;
+  --primary-color-4: #f7f7f5;
+  --primary-color-3: #d9d9d9;
+  --active-color-1: #e85340;
+  --active-color-1_hover: #53211a;
 
+  --secondary-color-1: #5340e8;
+  --secondary-color-2: #f2d930;
 
-    --secondary-color-1:#5340E8;
-    --secondary-color-2:#F2D930;
+  --font-sans-serif: "Inter", arial, sans-serif;
+  --font-serif: "Merriweather", Georgia, serif;
+  --border-style-black: 2px solid var(--primary-color-1);
+  --border-style-white: 2px solid var(--primary-color-3);
 
-    --font-sans-serif:"Inter", arial, sans-serif;
-    --font-serif: "Merriweather", Georgia, serif;
-    --border-style-black: 2px solid var(--primary-color-1);
-    --border-style-white: 2px solid var(--primary-color-3);
+  --default-padding: 1em;
 
-    --default-padding: 1em;
-
-    --transition-flow: 0.5s ease-out, color .1s ease;
+  --transition-flow: 0.5s ease-out, color 0.1s ease;
 }
 
 html {
-    font-family: sans-serif;
-    font-family: arial;
-    font-family: "inter";
-    font-family: var(--font-sans-serif);
+  font-family: sans-serif;
+  font-family: arial;
+  font-family: "inter";
+  font-family: var(--font-sans-serif);
 }
 
 body {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--primary-color-4);
 }
 
 li,
 ul {
-    display: block;
-    list-style-type: none;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-    unicode-bidi: isolate;
+  display: block;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  unicode-bidi: isolate;
 }
 
 img {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 h1,
@@ -69,85 +69,148 @@ h4,
 h5,
 h6,
 blockquote p {
-    font-family: serif;
-    font-family: Georgia;
-    font-family: "Merriweather";
-    font-family: var(--font-serif);
+  font-family: serif;
+  font-family: Georgia;
+  font-family: "Merriweather";
+  font-family: var(--font-serif);
 
-    font-weight: 900;
-    line-height: 1.3em;
+  font-weight: 900;
+  line-height: 1.3em;
 }
 
 a {
-    color: var(--active-color-1);
-    text-decoration: none;
-    transition: var(--transition-flow);
-
+  color: var(--active-color-1);
+  text-decoration: none;
+  transition: var(--transition-flow);
 }
 
 a:active {
-    color: var(--active-color-1);
+  color: var(--active-color-1);
 }
 
 a:hover {
-    color: var(--active-color-1_hover);
+  color: var(--active-color-1_hover);
 }
 
 button {
-    height: 44px;
-    padding: 1rem;
-    background: var(--active-color-1);
-    color: white;
-    border: var(--border-style-black);
-    transition: var(--transition-flow);
-    font-size: 1em;
+  padding: 1em;
+  margin: auto;
+  border: var(--border-style-black);
+  transition: var(--transition-flow);
+  font-size: 1em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
 }
 
 button:hover {
-    background-color: var(--active-color-1_hover);
-    font-weight: bold;
+  background-color: var(--active-color-1_hover);
+  font-weight: bold;
 }
 
 a,
 button,
 summary {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-main { 
-    padding: 2em;
-    max-width: 768px;
-    margin: auto;
+form {
+  display: flex;
+  align-items: center;
+}
+
+main {
+  padding: 0;
+  max-width: 768px;
+  margin: auto;
 }
 
 header {
-    width: 100%;
-    height: 50px;
-    background-color: var(--primary-color-3);
-    border-bottom: var(--border-style-black);
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 1em 0;
+  width: 100%;
+  height: 50px;
+  /* background-color: var(--primary-color-3); */
+  border-bottom: var(--border-style-black);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
 }
 
 header div {
-    max-width: 1200px;
+  max-width: 1200px;
 }
 
 header img {
-    width: 10em;
-    height: auto;
+  width: 10em;
+  height: auto;
 }
 
 header ul,
 header input {
-    display: none;
+  display: none;
 }
 
+article {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.5;
+}
 
+article img {
+  object-fit: cover;
+  inset: 0px;
+}
 
+article h1 {
+  padding: 1em 2em 1em 1em;
+  font-size: 1.375em;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+}
 
+article figure {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
 
+.article-date-header {
+  padding: 1em 1em 0 1em;
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  font-weight: 800;
+  margin: auto;
+}
+
+.article-date-header time {
+  padding-left: 1em;
+}
+
+.article-detail-author,
+.article-detail-content {
+  padding: 2em;
+}
+
+.article-detail-author h2 {
+  padding: 1em 1em 1em 2em;
+  font-size: 18px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 0.25rem;
+}
+
+.wp-block-heading {
+  color: var(--active-color-1);
+  font-size: 20px;
+}
+
+footer {
+  margin: auto;
+}
