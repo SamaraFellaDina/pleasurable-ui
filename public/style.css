@@ -124,6 +124,10 @@ header {
     background-color: var(--primary-color-3);
     border-bottom: var(--border-style-black);
     width: 100%;
+
+    @media (min-width: 768px) {
+        border-bottom: none;
+    }
 }
 
 header div {
@@ -133,6 +137,18 @@ header div {
     align-items: center;
     justify-content: space-between;
     padding: 1em;
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+        max-width: 1200px;
+        gap: 1em;    
+    }
+}
+
+header div nav {
+    @media (min-width: 768px) {
+        width: 100%;   
+    }
 }
 
 header div a img {
@@ -154,12 +170,44 @@ header div a img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 768px) {
+        background: none;
+        max-width: unset;
+        border-top: var(--border-style-black);
+        border-bottom:var(--border-style-black);
+        padding: .5em 1em;
+
+        position:unset;
+        top: 0;
+        right: 0;
+        width: unset;
+        height: unset;
+        background: none;
+        transition: none;
+        overflow-y: unset;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .navbar-menu li{
     font-size: 3em;
     line-height: auto;
     text-transform: none;
+
+    @media (min-width: 768px) {
+        font-size: .7em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: .8em;
+    }
 }
 
 .navbar-menu a{
@@ -229,65 +277,17 @@ header div a img {
     transform: none;
 }
 
+#navbar-toggle .navbar-menu-button,
+#navbar-toggle input {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
 
 @media (min-width: 768px) {
 
-    header {
-        border-bottom: none;
-    }
 
-    header div {
-        flex-direction: column;
-        max-width: 1200px;
-        gap: 1em;
-    }
 
-    header div nav{
-        width: 100%;
-    }
-
-    .navbar-menu {
-        background: none;
-        max-width: unset;
-        border-top: var(--border-style-black);
-        border-bottom:var(--border-style-black);
-        padding: .5em 1em;
-
-    }
-
-    .navbar-menu li {
-        font-size: .7em;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
- 
-
-    .navbar-menu {
-        position:unset;
-        top: 0;
-        right: 0;
-        width: unset;
-        height: unset;
-        background: none;
-        transition: none;
-        overflow-y: unset;
-    
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    #navbar-toggle .navbar-menu-button,
-    #navbar-toggle input {
-        display: none;
-    }
-
-    #navbar-toggle input:checked ~ .navbar-menu-button,
-    #navbar-toggle input:checked ~ .navbar-menu-button:nth-last-child(3),
-    #navbar-toggle input:checked ~ .navbar-menu-button:nth-last-child(2) {
-        transform: unset;
-    }
 }
 
 @media (min-width: 1024px) {
