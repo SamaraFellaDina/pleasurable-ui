@@ -152,6 +152,7 @@ header input {
     flex-direction: row;
     gap: 1em;
     
+    padding: 0 3em;
     overflow: auto;
     scrollbar-width: none;
     position: relative;
@@ -215,7 +216,24 @@ header input {
     letter-spacing: .1em;
 }
 
+/* .featured-carrousel-dots {
+    position: absolute;
+    bottom: 2em;
+    z-index: 2;
+    display: flex;
+    gap: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.featured-carrousel-dots .dot {
+    height: 2em;
+    width: 2em;
+    background-color: var(--active-color-1);
+    padding: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+} */
 /* .featured-carrousel li a:nth-child(3),
 .featured-carrousel li a:nth-child(4){
     display: none;
