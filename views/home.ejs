@@ -1,6 +1,33 @@
 <%- include('./partials/head') %>
 <main>
+  <ul class="hoofdpagina">
+    <%articles.forEach(article => {
+      {%>
+      <li>
+        <a href="/artikel/<%=article.slug%>">
 
+          <picture>
+            <img src="<%=article.jetpack_featured_media_url%>"
+            alt="artikel afbeelding"
+            width="<%=article.yoast_head_json.og_image[0].width%>" 
+            height="<%=article.yoast_head_json.og_image[0].height%>">
+          </picture>
+          <h1><%-article.title.rendered%></h1>
+        </a>
+        
+        <div>
+          <time>
+            <%= String(new Date(article.date).getDate()).padStart(2, '0') %>/<%= String(new Date(article.date).getMonth() + 1).padStart(2, '0') %>/<%= new Date(article.date).getFullYear() %>
+          </time>
+
+          <span><%=article.shares%> keer gedeeld</span>   
+        </div>
+        <p><%- article.excerpt.rendered %></p>
+      </li>
+      <%}
+    })%>
+  </ul>
+  
   <div class="carrousel">
   <ol class="featured-carrousel">
         <%articles.forEach(article => {
@@ -37,36 +64,6 @@
           <li>.</li>
         </ol>
   </div>
-
-
-
-  <ul class="hoofdpagina">
-    <%articles.forEach(article => {
-      {%>
-      <li>
-        <a href="/artikel/<%=article.slug%>">
-
-          <picture>
-            <img src="<%=article.jetpack_featured_media_url%>"
-            alt="artikel afbeelding"
-            width="<%=article.yoast_head_json.og_image[0].width%>" 
-            height="<%=article.yoast_head_json.og_image[0].height%>">
-          </picture>
-          <h1><%-article.title.rendered%></h1>
-        </a>
-        
-        <div>
-          <time>
-            <%= String(new Date(article.date).getDate()).padStart(2, '0') %>/<%= String(new Date(article.date).getMonth() + 1).padStart(2, '0') %>/<%= new Date(article.date).getFullYear() %>
-          </time>
-
-          <span><%=article.shares%> keer gedeeld</span>   
-        </div>
-        <p><%- article.excerpt.rendered %></p>
-      </li>
-      <%}
-    })%>
-  </ul>
 
   <ul class="categories-home">
     <li>
