@@ -129,9 +129,12 @@ form {
 
 main {
   padding: 0;
-  /* max-width: 768px; */
   margin: auto;
 }
+
+footer {
+    margin: auto;
+  }
 
 header {
   background-color: var(--primary-color-4);
@@ -378,6 +381,3 @@ article h1 {
   margin: auto;
 }
 
-footer {
-  margin: auto;
-}
