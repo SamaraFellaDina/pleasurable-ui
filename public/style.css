@@ -121,7 +121,7 @@ main {
 }
 
 header {
-    background-color: var(--primary-color-3);
+    background-color: var(--primary-color-4);
     border-bottom: var(--border-style-black);
     width: 100%;
 
@@ -281,17 +281,5 @@ header div a img {
 #navbar-toggle input {
     @media (min-width: 768px) {
         display: none;
-    }
-}
-
-@media (min-width: 768px) {
-
-
-
-}
-
-@media (min-width: 1024px) {
-    .navbar-menu li {
-        font-size: .8em;
     }
 }
