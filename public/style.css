@@ -308,7 +308,8 @@ article {
 
 article,
 .hoofdpagina,
-.categories-home {
+.categories-home,
+.featured-carrousel {
   max-width: 768px;
 }
 
