@@ -46,7 +46,8 @@ body {
 }
 
 li,
-ul {
+ul,
+ol {
     display: block;
     list-style-type: none;
     margin-block-start: 0;
@@ -82,7 +83,6 @@ a {
     color: var(--active-color-1);
     text-decoration: none;
     transition: var(--transition-flow);
-
 }
 
 a:active {

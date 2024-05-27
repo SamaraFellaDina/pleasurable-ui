@@ -28,10 +28,8 @@
     })%>
   </ul>
 
-  <ul class="categories-home">
-    <li>
-      <h1>Uitgelicht</h1>
-      <ul class="featured-carrousel">
+  <div>
+    <ol class="featured-carrousel">
           <%articles.forEach(article => {
           {%>
           <li>
@@ -41,8 +39,7 @@
               <img src="<%=article.jetpack_featured_media_url%>"
                 alt="artikel afbeelding"
                 width="<%=article.yoast_head_json.og_image[0].width%>" 
-                height="<%=article.yoast_head_json.og_image[0].height%>"
-                onerror="this.onerror=null; this.scr='../assets/images/placeholder.wepb'">
+                height="<%=article.yoast_head_json.og_image[0].height%>">
               </picture>
 
               <div>
@@ -56,7 +53,12 @@
           </li> 
         <%}
          })%> 
-      </ul>
+      </ol>
+    </div>
+
+  <ul class="categories-home">
+    <li>
+      <h1>Uitgelicht</h1>
     </li>
     <li>
       <h1>Onze supporters</h1>
@@ -86,11 +88,6 @@
       <h1>Wetenschap</h1>
     </li>    
   </ul>
-
-
-
-
-
 </main>
 <%- include('./partials/foot') %>
 
