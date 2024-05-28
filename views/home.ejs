@@ -1,29 +1,45 @@
 <%- include('./partials/head') %>
 <main>
-  <div>
-    <div class="donation">
+  <div class="donation">
+    <div class="feature-donation">
       <section>
-          <h1>Red Pers bestaat mede dankzij jou</h1>
+          <h2>Red Pers bestaat mede dankzij jou</h2>
           <p>Red Pers biedt jonge, aspirerende journalisten
           een podium én begeleiding. Dat kunnen we nog 
           beter met jouw steun.</p>
       </section>
       
-      <ul>
+      <ol>
           <li><a href="https://bunq.me/redpersnl/5">€5</a></li>
           <li><a href="https://bunq.me/redpersnl/10">€10</a></li>
           <li><a href="https://bunq.me/redpersnl/25">€25</a></li>
           <li><a href="https://bunq.me/redpersnl/50">€50</a></li>
           <li><a href="https://bunq.me/redpersnl/">anders</a></li>
-      </ul>
+      </ol>
     </div>
 
-    <div>
-      <h1>Gesteund door:</h1>
-      <img src="../assets/image/dpg-media.svg">
-      <img src="../assets/image/vereniging-veronica.svg">
+    <div class="feature-sponsors">
+      <h2>Gesteund door:</h2>
+    <div class="feature-sponsors-pictures">
+      <picture>
+        <img src="../assets/image/dpg-media.svg"
+        alt="DPG media"
+        width="832"
+        height="438"
+        >
+      </picture>
+
+      <picture>      
+        <img src="../assets/image/vereniging-veronica.svg"
+        alt="Vereniging Veronica"
+        width="268"
+        height="71"
+        >
+      </picture>
+    </div>
    </div>
   </div>
+  
   <ul class="hoofdpagina">
     <%articles.forEach(article => {
       {%>

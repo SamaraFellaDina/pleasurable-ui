@@ -309,7 +309,8 @@ article {
 article,
 .hoofdpagina,
 .categories-home,
-.featured-carrousel {
+.featured-carrousel,
+.feature-donation {
   max-width: 768px;
 }
 
@@ -384,17 +385,56 @@ article h1 {
 }
 
 .donation {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--active-color-1);
-    padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-.donation ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-    border: var(--border-style-black);
+.donation div {
+  padding: 3em;
+  display: flex;
+  height: 15em;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.donation h2 {
+  font-size: 2em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.feature-donation {
+  background-color: var(--active-color-1);
+}
+
+.feature-donation ol {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border: var(--border-style-black);
+}
+
+.feature-donation ol li a {
+  color: var(--primary-color-1);
+  font-size: 1.5em;
+}
+
+.feature-donation ol li a:hover {
+  color: var(--primary-color-4);
+  font-weight: 900;
+}
+
+.feature-sponsors {
+  background-color: var(--secondary-color-2);
+}
+
+.feature-sponsors-pictures {
+  display: flex;
+}
+
+.feature-sponsors-pictures picture {
+  width: 15em;
 }
 
 .carrousel {
