@@ -1,59 +1,78 @@
 <%- include('./partials/head') %>
 
 <main>
-    <article>
-        <h1><%-article.title.rendered%></h1>
-        <picture>
-            <img src="<%-article.jetpack_featured_media_url%>" 
-            alt="artikel afbeelding"
-            width="<%=article.yoast_head_json.og_image[0].width%>"
-            height="<%=article.yoast_head_json.og_image[0].height%>">
-        </picture>
+  <article>
+    <div class="article-header">
+      <picture>
+        <img
+          src="<%-article.jetpack_featured_media_url%>"
+          alt="artikel afbeelding"
+          width="<%=article.yoast_head_json.og_image[0].width%>"
+          height="<%=article.yoast_head_json.og_image[0].height%>"
+        />
+      </picture>
 
+      <div class="article-text-header">
         <div class="article-date-header">
-            <div>
-                <a href=""><%=article.yoast_head_json.schema["@graph"][0].articleSection[0]%></a>
-                
-                <time>
-                    <%= new Date(article.date).getDate() %>/<%= new Date(article.date).getMonth() %>/<%= new
-                    Date(article.date).getFullYear() %>
-                </time>
-          </div>
+          <a href=""
+            ><%=article.yoast_head_json.schema["@graph"][0].articleSection[0]%></a
+          >
 
-            <form action="/article/<%=article.slug%>" method="post">
-                <input type="hidden" name="slug" value="<%-article.slug%>">
-                <label for="copy-link"><%= article.copy %></label>
-                <button type="submit" id="share">
-                    <?xml version="1.0" encoding="iso-8859-1"?>
-                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                    <svg fill="#FFFF" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                         viewBox="0 0 51.997 51.997" xml:space="preserve">
-                    <path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
-                        c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
-                        c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
-                        C52.216,18.553,51.97,16.611,51.911,16.242z"/>
-                    </svg>
-                    <%-share%>
-                </button>
-            </form>
+          <time>
+            <%= new Date(article.date).getDate() %>/<%= new
+            Date(article.date).getMonth() %>/<%= new
+            Date(article.date).getFullYear() %>
+          </time>
         </div>
 
-        <section class="article-detail_author">
-            <strong><%-article.excerpt.rendered%></strong>
+        <h1><%-article.title.rendered%></h1>
+      </div>
+    </div>
 
-            <section>
-            <h2><span class="article-detail_author_type">Auteur:</span> <%=article.yoast_head_json.author%></h2>
-            <!-- <img src="https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY="> -->
-            </section>
-            <section>
-                <h2><span class="article-detail_author_type">Leestijd:</span> < 3 min</h2>
-            </section>
-        </section>
-        <section class="article-detail_content">
-            <%-article.content.rendered%>
-        </section>
-    </article>
+    <form action="/article/<%=article.slug%>" method="post">
+      <input type="hidden" name="slug" value="<%-article.slug%>" />
+      <label for="copy-link"><%= article.copy %></label>
+      <button type="submit" id="share" class="share-button">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <svg
+          fill="#000000"
+          height="20px"
+          width="20px"
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 512 512"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M512,241.7L273.643,3.343v156.152c-71.41,3.744-138.015,33.337-188.958,84.28C30.075,298.384,0,370.991,0,448.222v60.436
+			l29.069-52.985c45.354-82.671,132.173-134.027,226.573-134.027c5.986,0,12.004,0.212,18.001,0.632v157.779L512,241.7z
+			 M255.642,290.666c-84.543,0-163.661,36.792-217.939,98.885c26.634-114.177,129.256-199.483,251.429-199.483h15.489V78.131
+			l163.568,163.568L304.621,405.267V294.531l-13.585-1.683C279.347,291.401,267.439,290.666,255.642,290.666z"
+              />
+            </g>
+          </g>
+        </svg>
+        <%-share%>
+      </button>
+    </form>
+
+    <section class="article-detail-author">
+      <strong><%-article.excerpt.rendered%></strong>
+      <h2>
+        <span class="article-detail_author_type">Auteur:</span>
+        <!-- <img src="images/fallback.png" /> -->
+        <%=article.yoast_head_json.author%>
+      </h2>
+      <!-- <img src="https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY="> -->
+
+      <h2><span class="article-detail_author_type">Leestijd:</span> < 3 min</h2>
+    </section>
+    <div class="article-detail-content"><%-article.content.rendered%></div>
+  </article>
 </main>
-
 
 <%- include('./partials/foot') %>
