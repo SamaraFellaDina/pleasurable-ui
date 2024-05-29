@@ -426,7 +426,7 @@ article h1 {
     transform: translateX(0vw);
   }
   to {
-    transform: translateX(-200vw);
+    transform: translateX(-100vw);
   }
 }
 
