@@ -28,42 +28,33 @@
     })%>
   </ul>
   
-  <div class="carrousel">
-  <ol class="featured-carrousel">
-        <%articles.forEach(article => {
-        {%>
-        <li>
-          <a href="/artikel/<%=article.slug%>">
+<ol class="featured-carousel" id="featured-carousel">
+      <%articles.forEach(article => {
+      {%>
+      <li>
+        <a href="/artikel/<%=article.slug%>">
 
-            <picture>
-            <img src="<%=article.jetpack_featured_media_url%>"
-              alt="artikel afbeelding"
-              width="<%=article.yoast_head_json.og_image[0].width%>" 
-              height="<%=article.yoast_head_json.og_image[0].height%>"
-              loading="lazy"> 
-            </picture>
+          <picture>
+          <img src="<%=article.jetpack_featured_media_url%>"
+            alt="artikel afbeelding"
+            width="<%=article.yoast_head_json.og_image[0].width%>" 
+            height="<%=article.yoast_head_json.og_image[0].height%>"
+            loading="lazy"> 
+          </picture>
 
-            <div>
-              <time>
-                <%= String(new Date(article.date).getDate()).padStart(2, '0') %>/<%= String(new Date(article.date).getMonth() + 1).padStart(2, '0') %>/<%= new Date(article.date).getFullYear() %>
-              </time>
-              <h1><%-article.title.rendered%></h1>
-              <p><%-article.yoast_head_json.author%></p>
-            </div>
+          <div>
+            <time>
+              <%= String(new Date(article.date).getDate()).padStart(2, '0') %>/<%= String(new Date(article.date).getMonth() + 1).padStart(2, '0') %>/<%= new Date(article.date).getFullYear() %>
+            </time>
+            <h1><%-article.title.rendered%></h1>
+            <p><%-article.yoast_head_json.author%></p>
+          </div>
 
-          </a>
-        </li> 
-      <%}
-        })%> 
-    </ol>
-    <ol class="featured-carrousel-slider">
-          <li>.</li>
-          <li>.</li>
-          <li>.</li>
-          <li>.</li>
-          <li>.</li>
-        </ol>
-  </div>
+        </a>
+      </li> 
+    <%}
+      })%> 
+  </ol>
 
   <ul class="categories-home">
     <li>
