@@ -409,15 +409,25 @@ article h1 {
   gap: 1em;
   overflow: auto;
   scrollbar-width: none;
-  position: relative;
+  position: unset;
   scroll-snap-type: x mandatory;
   padding: 1em 0;
   -webkit-mask-image: var(--blur-index);
   mask-image: var(--blur-index);
+
 }
 
 .featured-carousel li {
   width: 60%;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(-200vw);
+  }
 }
 
 .featured-carousel li a {
@@ -429,6 +439,8 @@ article h1 {
   height: 15em;
   background-color: var(--primary-color-3);
   scroll-snap-align: center;
+
+  
 }
 
 .featured-carousel li a,
