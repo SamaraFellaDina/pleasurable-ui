@@ -320,7 +320,7 @@ article {
 article,
 .hoofdpagina,
 .categories-home,
-.featured-carrousel {
+.featured-carousel {
   max-width: 768px;
 }
 
@@ -394,23 +394,33 @@ article h1 {
   margin: auto;
 }
 
-.carrousel {
-  padding: 1em;
-}
+.featured-carousel {
+  --blur-index: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
 
-.featured-carrousel {
+  width: 100vw;
   display: flex;
   flex-direction: row;
   gap: 1em;
-  padding: 1em;
-
   overflow: auto;
   scrollbar-width: none;
   position: relative;
   scroll-snap-type: x mandatory;
+  padding: 1em 0;
+  -webkit-mask-image: var(--blur-index);
+  mask-image: var(--blur-index);
 }
 
-.featured-carrousel li a {
+.featured-carousel li {
+  width: 60%;
+}
+
+.featured-carousel li a {
   display: block;
   text-align: center;
   display: flex;
@@ -421,57 +431,51 @@ article h1 {
   scroll-snap-align: center;
 }
 
-.featured-carrousel li a,
-.featured-carrousel li a:hover {
+.featured-carousel li a,
+.featured-carousel li a:hover {
   color: var(--primary-color-1);
 }
 
-.featured-carrousel li a:hover {
+.featured-carousel li a:hover {
   box-shadow: 0px 0px 10px;
 }
 
-.featured-carrousel li a,
-.featured-carrousel li a picture img {
+.featured-carousel li a,
+.featured-carousel li a picture img {
   border: var(--border-style-black);
 }
 
-.featured-carrousel li a picture,
-.featured-carrousel li a div {
+.featured-carousel li a picture,
+.featured-carousel li a div {
   padding: 1em;
 }
 
-.featured-carrousel li a picture img {
+.featured-carousel li a picture img {
   width: 10em;
   height: 10em;
   object-fit: cover;
 }
 
-.featured-carrousel li a div {
+.featured-carousel li a div {
   width: 15em;
   text-align: left;
 }
 
-.featured-carrousel li a div h1 {
+.featured-carousel li a div h1 {
   font-size: 1em;
 }
 
-.featured-carrousel li a div time,
-.featured-carrousel li a div h1,
-.featured-carrousel li a div p {
+.featured-carousel li a div time,
+.featured-carousel li a div h1,
+.featured-carousel li a div p {
   font-size: 1em;
   margin-block-start: 0;
   margin-block-end: 0;
   padding: 0.2em;
 }
 
-.featured-carrousel li a div time {
+.featured-carousel li a div time {
   font-weight: 900;
   color: var(--active-color-1);
   letter-spacing: 0.1em;
-}
-
-.featured-carrousel-slider {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
