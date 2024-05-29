@@ -334,13 +334,13 @@ article img {
   @media (min-width: 820px) {
     padding-top: 2em;
     border-radius: 0.5rem;
+  }
 
-    @media (min-width: 1064px) {
-      padding-top: 2em;
-      border-radius: 0.5rem;
-      width: 100%;
-      height: 100%;
-    }
+  @media (min-width: 1064px) {
+    padding-top: 2em;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
   }
 }
 
